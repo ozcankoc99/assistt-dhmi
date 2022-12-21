@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Nom.master.cs" Inherits="Dhmi.Web.Nom" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>        
+    <link href="Content/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body runat="server" id="Body">
+    <form id="form1" runat="server">
+    <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" AllowResize="False" Orientation="Vertical"
+        FullscreenMode="True" SeparatorVisible="False" Height="100%" Width="100%">
+        <Styles>
+            <Pane>
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px" />
+            </Pane>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="Header" Size="85px" MinSize="85px">
+                <PaneStyle CssClass="headerPane">
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl ID="SplitterContentControl1" runat="server">
+                        <div class="headerTop">
+                            <div class="templateTitle">
+                                <table>
+                                    <tr>
+                                        <td width="90px">
+                                            <a href="Login.aspx"><asp:Image ID="ascdd" runat="server" ImageUrl="~/Content/Images/bddk.png" Width="60px"/></a>
+                                        </td>
+                                        <td>
+                                            <dx:ASPxLabel ID="lblUserName" runat="server" AssociatedControlID="tbUserName" Text="DEVLET HAVA MEYDANLARI İŞLETMESİ GENEL MÜDÜRLÜĞÜ (DHMİ)" Font-Names="Calibri" Font-Size="18" ForeColor="#2A3788"/><br /><dx:ASPxLabel ID="ASPxLabel3" runat="server" AssociatedControlID="tbUserName" Text="İletişim Merkezi Sistemi" Font-Names="Verdana" Font-Size="12" ForeColor="#2A3788"/>
+                                        </td>
+                                    </tr>
+                                </table>                                
+                            </div>
+                            <div class="loginControl">
+                                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                    <AnonymousTemplate>
+                                        <a href="~/Account/Login.aspx" runat="server" id="loginLink"><dx:ASPxLabel ID="lblUserName" runat="server" AssociatedControlID="tbUserName" Text="Giriş" ForeColor="Maroon" Font-Size="8"/></a> 
+										| 
+										<a href="~/Account/Register.aspx" runat="server" id="registerLink"><dx:ASPxLabel ID="ASPxLabel3" runat="server" AssociatedControlID="tbUserName" Text="Şifremi Unuttum" ForeColor="Maroon" Font-Size="8"/></a>
+                                    </AnonymousTemplate>
+                                    <LoggedInTemplate>
+                                        Welcome <span class="bold">
+                                            <asp:LoginName ID="HeadLoginName" runat="server" />
+                                        </span>! [
+                                        <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out"
+                                            LogoutPageUrl="~/" />
+                                        ]
+                                    </LoggedInTemplate>
+                                </asp:LoginView>
+                            </div>
+                        </div>                        
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="Content" MinSize="455px">
+				<PaneStyle CssClass="mainContentPane"></PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl ID="SplitterContentControl3" runat="server" SupportsDisabledAttribute="True">
+                        <asp:ContentPlaceHolder ID="Content" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+                <PaneStyle BackColor="white">
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="Footer" Size="25px" PaneStyle-CssClass="footerPane333">
+                <ContentCollection>
+                    <dx:SplitterContentControl ID="SplitterContentControl4" runat="server">
+                        <div class="footerMenu333">                            
+                        </div>                        
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+        </Panes>
+    </dx:ASPxSplitter>
+	
+<%-- DXCOMMENT: Configure a datasource for the header menu --%>
+<asp:XmlDataSource ID="XmlDataSourceHeader" runat="server" DataFile="~/App_Data/TopMenu.xml"
+    XPath="/items/*"></asp:XmlDataSource>
+    </form>
+</body>
+</html>

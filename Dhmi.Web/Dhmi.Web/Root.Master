@@ -1,0 +1,215 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="Dhmi.Web.Root" %>
+
+<!DOCTYPE html>
+<html class="" xmlns="http://www.w3.org/1999/xhtml" >
+
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="Content/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        // <![CDATA[       
+        function ShowGosterWindow() {
+            pcGoster.Show();
+        }
+        // ]]> 
+    </script>
+    <style type="text/css">
+        #mainContainer td.buttonCell {
+            padding-top: 15px;
+        }
+
+        #mainContainer td.caption {
+            padding-right: 5px;
+            padding-top: 4px;
+            vertical-align: top;
+        }
+
+        #mainContainer td.content {
+            padding-bottom: 20px;
+        }
+
+        #mainContainer td.imagePreviewCell {
+            border: solid 2px gray;
+            width: 110px;
+            height: 115px;
+            /*if IE*/
+            height: expression("110px");
+            text-align: center;
+        }
+
+        #mainContainer td.note {
+            text-align: left;
+            padding-top: 1px;
+        }
+    </style>
+    <script type="text/javascript">
+        // <![CDATA[
+        function Uploader_OnUploadStart() {
+            btnUpload.SetEnabled(false);
+        }
+        function Uploader_OnFileUploadComplete(args) {
+            var imgSrc = aspxPreviewImgSrc;
+            if (args.isValid) {
+                var date = new Date();
+                imgSrc = "UploadImages/" + args.callbackData + "?dx=" + date.getTime();
+            }
+            getPreviewImageElement().src = imgSrc;
+        }
+        function Uploader_OnFilesUploadComplete(args) {
+            UpdateUploadButton();
+        }
+        function UpdateUploadButton() {
+            btnUpload.SetEnabled(uploader.GetText(0) != "");
+        }
+        function getPreviewImageElement() {
+            return document.getElementById("previewImage");
+        }
+        // ]]> 
+    </script>
+    
+</head>
+<body runat="server" id="Body">
+    <form id="form1" runat="server">
+        <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" AllowResize="False" Orientation="Vertical"
+            FullscreenMode="True" SeparatorVisible="False" Height="100%" Width="100%">
+            <Styles>
+                <Pane>
+                    <Paddings Padding="0px" />
+                    <Border BorderWidth="0px" />
+                </Pane>
+            </Styles>
+            <Panes>
+                <dx:SplitterPane Name="Header" Size="105px" MinSize="105px">
+                    <PaneStyle CssClass="headerPane">
+                        <BorderBottom BorderWidth="1px" />
+                    </PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="SplitterContentControl1" runat="server">
+                            <div class="headerTop">
+                                <div class="templateTitle">
+                                    <table>
+                                        <tr>
+                                            <td width="90px">
+                                                <a href="McCagriIslemleri.aspx"><asp:Image ID="ascdd" runat="server" ImageUrl="~/Content/Images/bddk.png" Width="60px" /></a>
+                                            </td>
+                                            <td>                                                
+                                                <dx:ASPxLabel ID="lblUserName" runat="server" AssociatedControlID="tbUserName" Text="DEVLET HAVA MEYDANLARI İŞLETMESİ GENEL MÜDÜRLÜĞÜ (DHMİ)" Font-Names="Calibri" Font-Size="18" ForeColor="#2A3788" />                                                
+                                                <br />
+                                                <dx:ASPxLabel ID="ASPxLabel3" runat="server" AssociatedControlID="tbUserName" Text="İletişim Merkezi Sistemi" Font-Names="Verdana" Font-Size="12" ForeColor="#2A3788" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="loginControl">
+                                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                                        <AnonymousTemplate>
+                                            <div class="loginControlll">
+                                                <dx:ASPxButton ID="btn_cikis" runat="server" Width="90px" Text="Çıkış" ForeColor="#C34A2C" OnClick="btn_cikis_Click" UseSubmitBehavior="false">
+                                                    <ClientSideEvents Click="function(s,e) { e.processOnServer = confirm('Çıkmak istediğinizden emin misiniz?'); }" />
+                                                </dx:ASPxButton>
+                                            </div>
+                                        </AnonymousTemplate>
+                                    </asp:LoginView>
+                                </div>
+                            </div>
+                            <div class="headerMenu">
+                                <%-- DXCOMMENT: Configure the header menu --%>
+                                <dx:ASPxMenu ID="ASPxMenu1" runat="server" RenderMode="Lightweight" Width="100%" Paddings-PaddingTop="0">
+                                    <Border BorderWidth="0px" />
+                                    <BorderTop BorderWidth="1px" />
+                                </dx:ASPxMenu>
+                            </div>
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                </dx:SplitterPane>
+                <dx:SplitterPane Name="Content" MinSize="455px">
+                    <PaneStyle CssClass="mainContentPane">
+                        <BorderBottom BorderWidth="1px"></BorderBottom>
+                    </PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="SplitterContentControl3" runat="server" SupportsDisabledAttribute="True">
+                            <asp:ContentPlaceHolder ID="Content" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                    <PaneStyle BackColor="white">
+                        <BorderBottom BorderWidth="1px" />
+                    </PaneStyle>
+                </dx:SplitterPane>
+                <dx:SplitterPane Name="Footer" Size="30px" PaneStyle-CssClass="footerPane">
+                    <PaneStyle CssClass="footerPane"></PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="SplitterContentControl4" runat="server">
+                            <div class="footerMenu">
+                                <table>
+                                    <tr>
+                                        <td align="left" width="960px">
+                                            <table>
+                                                <tr>
+                                                    <td width="8" align="left"></td>
+                                                    <td width="35" align="left">
+                                                        <img src="Content/Images/yeni2.png" alt="" />
+                                                    </td>
+                                                    <td width="77" align="left">
+                                                        <asp:Label ID="lbl_duyuru_tarih" runat="server" Text="31.12.2014" Font-Size="8" Font-Bold="true" ForeColor="Maroon"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <dx:ASPxHyperLink ID="lbl_duyuru_ana" runat="server" Text="-" Font-Size="8" Font-Bold="true" ForeColor="Black">
+                                                            <ClientSideEvents Click="function(s, e) { ShowGosterWindow(); }" />
+                                                        </dx:ASPxHyperLink>                                                      
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:Label ID="Label1" runat="server" Text="(" Font-Size="8" Font-Bold="true" ForeColor="#CF1F1F"></asp:Label><a href="McTumDuyurular.aspx"><asp:Label ID="lbl_tum_duyurular" runat="server" Text="Tüm Duyurular" Font-Size="8" Font-Bold="true" ForeColor="#CF1F1F"></asp:Label></a><asp:Label ID="Label2" runat="server" Text=")" Font-Size="8" Font-Bold="true" ForeColor="#CF1F1F"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="right">
+                                            <table>
+                                                <tr>
+                                                    <td width="5000" align="right">[<dx:ASPxLabel ID="ASPxLabel43" runat="server" Text="omur" Font-Bold="true" ForeColor="Maroon"></dx:ASPxLabel>
+                                                        ]
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="10px" align="center"></td>
+                                    </tr>
+                                </table>                                
+                            </div>
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                </dx:SplitterPane>
+            </Panes>
+        </dx:ASPxSplitter>
+        <dx:ASPxPopupControl ID="pcGoster" runat="server" CloseAction="CloseButton" Modal="True"
+                                    PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ClientInstanceName="pcGoster"
+                                    HeaderText="DUYURU BİLGİLERİ" AllowDragging="True" PopupAnimationType="Fade" EnableViewState="False">
+                                    <ClientSideEvents PopUp="function(s, e) { ASPxClientEdit.ClearGroup('entryGroup'); txt_duyuru_goster.Focus(); }" />
+                                    <ContentCollection>
+                                        <dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+                                            <asp:Panel ID="pnl_g_gossasas" runat="server" Width="440px" Height="140px" BorderColor="Maroon">
+                                                <table>
+                                                    <tr>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td height="150px">
+                                                            <dx:ASPxMemo ID="txt_duyuru_aciklama" runat="server" MaxLength="4000" Width="438" Height="120">
+                                                                                                                    <ValidationSettings ValidationGroup="Group_Vat" ErrorDisplayMode="ImageWithTooltip">
+                                                                                                                        <RequiredField ErrorText="Adres giriniz..." />
+                                                                                                                    </ValidationSettings>
+                                                                                                                </dx:ASPxMemo>
+                                                        </td>
+                                                    </tr>                                                    
+                                                </table>
+                                            </asp:Panel>
+                                        </dx:PopupControlContentControl>
+                                    </ContentCollection>
+                                </dx:ASPxPopupControl>
+        <%-- DXCOMMENT: Configure a datasource for the header menu --%>
+        <asp:XmlDataSource ID="XmlDataSourceHeader" runat="server" DataFile="~/App_Data/omur.xml"
+            XPath="/items/*"></asp:XmlDataSource>
+    </form>
+</body>
+</html>

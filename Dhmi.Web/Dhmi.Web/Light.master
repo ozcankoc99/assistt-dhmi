@@ -1,0 +1,6 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Nom.master" AutoEventWireup="true" CodeBehind="Light.master.cs" Inherits="Dhmi.Web.Light" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="Content" runat="server">
+    <div class="content">
+<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+</div>
+</asp:Content>

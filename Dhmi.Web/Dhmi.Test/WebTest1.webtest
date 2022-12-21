@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest1" Id="32127f6a-cfba-4a23-9fbd-f33613053568" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="" StopOnError="False" RecordedResultFile="WebTest1.db7ebddb-014d-450d-8112-30c6723a5943.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="b1519555-d5b7-4435-8a0b-62471e3803e7" Version="1.1" Url="http://alo.dhmi.gov.tr/Account/Login.aspx" ThinkTime="14" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extract Hidden Fields" Description="Extract all hidden fields from the response and place them into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.ctl00$ctl00$ASPxSplitter1$Content$MainContent$btnLogin" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ctl00$ctl00$ASPxSplitter1$Content$MainContent$btnLogin" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="POST" Guid="0e0884de-4f7b-445c-a933-e6e94a3d3511" Version="1.1" Url="http://alo.dhmi.gov.tr/Account/Login.aspx" ThinkTime="12" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://alo.dhmi.gov.tr/McCagriIslemleri.aspx?l0j4pyfuyabfbilelnahum" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://alo.dhmi.gov.tr/Account/Login.aspx" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="__EVENTTARGET" Value="{{$HIDDEN1.__EVENTTARGET}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTARGUMENT" Value="{{$HIDDEN1.__EVENTARGUMENT}}" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__VIEWSTATE" Value="{{$HIDDEN1.__VIEWSTATE}}" RecordedValue="/wEPDwUJOTk1MTUxOTkxD2QWAmYPZBYCZg9kFgICAw9kFgICAQ9kFgICAQ88KwAHAQAPFgIeDl8hVXNlVmlld1N0YXRlZ2QWAmYPZBYCAgEPZBYCZg9kFgJmD2QWAgIBD2QWAgIBD2QWAgIBD2QWAgIND2QWAgIBDw8WAh4EVGV4dAUGNDkzNjQ1ZGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgIFGWN0bDAwJGN0bDAwJEFTUHhTcGxpdHRlcjEFNmN0bDAwJGN0bDAwJEFTUHhTcGxpdHRlcjEkQ29udGVudCRNYWluQ29udGVudCRidG5Mb2dpbqaC0AtcKn6yVY0wB3T0EDPOu0pcbZ9xPJMUCDZHWmrr" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__EVENTVALIDATION" Value="{{$HIDDEN1.__EVENTVALIDATION}}" RecordedValue="/wEdAAKN53Nf9nRQprJYB+Kht17PnjT+Av0xnSSCQyuoz5hNyV1DvJJe9AclgzQCY8lCgTxpWE0BznN/9IGBmsQpl5FE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00_ctl00_ASPxSplitter1_CS" Value="[{&quot;st&quot;:&quot;px&quot;,&quot;s&quot;:85,&quot;c&quot;:0,&quot;spt&quot;:0,&quot;spl&quot;:0},{&quot;s&quot;:100,&quot;st&quot;:&quot;%&quot;,&quot;c&quot;:0,&quot;spt&quot;:0,&quot;spl&quot;:0},{&quot;st&quot;:&quot;px&quot;,&quot;s&quot;:25,&quot;c&quot;:0,&quot;spt&quot;:0,&quot;spl&quot;:0}]" RecordedValue="[{&quot;st&quot;:&quot;px&quot;,&quot;s&quot;:85,&quot;c&quot;:0,&quot;spt&quot;:0,&quot;spl&quot;:0},{&quot;s&quot;:100,&quot;st&quot;:&quot;%&quot;,&quot;c&quot;:0,&quot;spt&quot;:0,&quot;spl&quot;:0},{&quot;st&quot;:&quot;px&quot;,&quot;s&quot;:25,&quot;c&quot;:0,&quot;spt&quot;:0,&quot;spl&quot;:0}]" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ctl00$ASPxSplitter1$Content$MainContent$tbUserName" Value="vip_admin" RecordedValue="vip_admin" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ctl00$ASPxSplitter1$Content$MainContent$tbUserName$CVS" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ctl00$ASPxSplitter1$Content$MainContent$tbPassword" Value="654321" RecordedValue="654321" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ctl00$ASPxSplitter1$Content$MainContent$tbPassword$CVS" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ctl00$ASPxSplitter1$Content$MainContent$tbGuvenlik" Value="493645" RecordedValue="493645" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ctl00$ASPxSplitter1$Content$MainContent$tbGuvenlik$CVS" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ctl00$ctl00$ASPxSplitter1$Content$MainContent$btnLogin" Value="Giriş" RecordedValue="Giriş" CorrelationBinding="{{FormPostParam1.ctl00$ctl00$ASPxSplitter1$Content$MainContent$btnLogin}}" UrlEncode="True" />
+        <FormPostParameter Name="DXScript" Value="1_171,1_94,1_164,1_163,1_114,1_121,1_105,1_92,1_146" RecordedValue="1_171,1_94,1_164,1_163,1_114,1_121,1_105,1_92,1_146" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="DXCss" Value="0_4015,1_12,1_14,0_4019,1_5,0_3864,0_3862,0_574,../Content/style.css" RecordedValue="0_4015,1_12,1_14,0_4019,1_5,0_3864,0_3862,0_574,../Content/style.css" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="534500be-fdbd-4e40-9f7e-4f19e5ae0e0b" Version="1.1" Url="http://alo.dhmi.gov.tr/CkbCagriKayitBilgileri.aspx" ThinkTime="8" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://alo.dhmi.gov.tr/McCagriIslemleri.aspx?l0j4pyfuyabfbilelnahum" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="l0j4pyfuyabfbilelnahum" RecordedValue="l0j4pyfuyabfbilelnahum" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="be38983d-0805-4253-915b-91ba85a6d990" Version="1.1" Url="http://alo.dhmi.gov.tr/AtnAtananBildirimBilgileri.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://alo.dhmi.gov.tr/CkbCagriKayitBilgileri.aspx?l0j4pyfuyabfbilelnahum" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="l0j4pyfuyabfbilelnahum" RecordedValue="l0j4pyfuyabfbilelnahum" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>
